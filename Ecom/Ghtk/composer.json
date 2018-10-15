@@ -1,6 +1,6 @@
 {
     "name": "ecom/module-ghtk",
-    "description": "",
+    "description": "Module Giao hang tiet kiem for magento2",
     "type": "magento2-module",
     "license": "proprietary",
     "minimum-stability": "dev",

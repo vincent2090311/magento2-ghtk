@@ -11,14 +11,14 @@ define([
             template: 'Ecom_Ghtk/checkout/shipping/insurance'
         },
         getFormattedPrice: function () {
-            var insurance_amount = (window.checkoutConfig.gthk != undefined) ? window.checkoutConfig.gthk.insurance_amount : 0;
+            var insurance_amount = (window.checkoutConfig.ghtk != undefined) ? window.checkoutConfig.ghtk.insurance_amount : 0;
             return priceUtils.formatPrice(insurance_amount, quote.getPriceFormat());
         },
         getLabel: function () {
-            return (window.checkoutConfig.gthk != undefined) ? window.checkoutConfig.gthk.insurance_message : '';
+            return (window.checkoutConfig.ghtk != undefined) ? window.checkoutConfig.ghtk.insurance_message : '';
         },
         isDisplayed: function () {
-            return window.checkoutConfig.gthk != undefined;
+            return (window.checkoutConfig.ghtk != undefined && window.checkoutConfig.ghtk.show == true);
         }
     });
 });

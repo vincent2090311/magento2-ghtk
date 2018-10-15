@@ -27,7 +27,7 @@ class GhtkConfigProvider implements ConfigProviderInterface
     {
         $config = [];
         if ($this->helperData->getConfigValue('active') && $this->helperData->getConfigValue('allow_use_insurance')) {
-            $config['gthk'] = [
+            $config['ghtk'] = [
                 'insurance_message' => $this->helperData->getConfigValue('insurance_message'),
                 'insurance_amount' => $this->helperData->getConfigValue('insurance_amount')
             ];
