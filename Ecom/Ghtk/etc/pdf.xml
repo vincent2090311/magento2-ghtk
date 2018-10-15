@@ -1,0 +1,12 @@
+<?xml version="1.0"?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Sales:etc/pdf_file.xsd">
+    <totals>
+        <total name="insurance">
+            <title translate="true">Insurance</title>
+            <source_field>insurance</source_field>
+            <font_size>7</font_size>
+            <display_zero>false</display_zero>
+            <sort_order>100</sort_order>
+        </total>
+    </totals>
+</config>

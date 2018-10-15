@@ -1,0 +1,16 @@
+<?xml version="1.0"?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:ObjectManager/etc/config.xsd">
+    <type name="Magento\Framework\Console\CommandList">
+        <arguments>
+            <argument name="commands" xsi:type="array">
+                <item name="ghtk_Query" xsi:type="object">Ecom\Ghtk\Console\QueryAPI</item>
+            </argument>
+        </arguments>
+    </type>
+    <type name="Magento\Checkout\Model\ShippingInformationManagement">
+        <plugin name="Ecom_Ghtk_Plugin_Magento_Checkout_Model_ShippingInformationManagement" type="Ecom\Ghtk\Plugin\Magento\Checkout\Model\ShippingInformationManagement" sortOrder="10"/>
+    </type>
+    <type name="Magento\Quote\Model\Quote\Address">
+        <plugin name="Ecom_Ghtk_Plugin_Magento_Quote_Model_Quote_Address" type="Ecom\Ghtk\Plugin\Magento\Quote\Model\Quote\Address" sortOrder="10"/>
+    </type>
+</config>

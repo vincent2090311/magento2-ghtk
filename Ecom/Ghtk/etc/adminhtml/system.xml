@@ -1,0 +1,68 @@
+<?xml version="1.0" ?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Config:etc/system_file.xsd">
+    <system>
+        <section id="carriers" showInDefault="1" showInStore="1" showInWebsite="1" sortOrder="1000" translate="label">
+            <group id="ghtk" showInDefault="1" showInStore="1" showInWebsite="1" sortOrder="10" translate="label">
+                <label>Giao Hang Tiet Kiem</label>
+                <field id="active" showInDefault="1" showInStore="1" showInWebsite="1" sortOrder="10" translate="label" type="select">
+                    <label>Enabled</label>
+                    <source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
+                </field>
+                <field id="title" showInDefault="1" showInWebsite="1" sortOrder="20" translate="label" type="text">
+                    <label>Title</label>
+                </field>
+                <field id="name" showInDefault="1" showInStore="1" showInWebsite="1" sortOrder="30" translate="label" type="text">
+                    <label>Method Name</label>
+                </field>
+                <field id="api_url" showInDefault="1" showInWebsite="1" sortOrder="40" translate="label" type="text">
+                    <label>API Url</label>
+                    <comment>
+                    <![CDATA[
+                    production: <b>https://services.giaohangtietkiem.vn</b><br>
+                    sandbox: <b>https://dev.ghtk.vn</b>
+                    ]]>
+                    </comment>
+                </field>
+                <field id="api_key" showInDefault="1" showInWebsite="1" sortOrder="41" translate="label" type="text">
+                    <label>API Key</label>
+                </field>
+                <field id="allow_pick_money" showInDefault="1" showInWebsite="1" sortOrder="42" translate="label" type="select">
+                    <label>Allow Pick Money</label>
+                    <source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
+                </field>
+                <field id="allow_use_insurance" showInDefault="1" showInWebsite="1" sortOrder="43" translate="label" type="select">
+                    <label>Allow Use Insurance</label>
+                    <source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
+                </field>
+                <field id="insurance_message" showInDefault="1" showInWebsite="1" sortOrder="43" translate="label" type="textarea">
+                    <label>Insurance Message</label>
+                    <depends>
+                        <field id="allow_use_insurance">1</field>
+                    </depends>
+                </field>
+                <field id="insurance_amount" showInDefault="1" showInWebsite="1" sortOrder="44" translate="label" type="text">
+                    <label>Product liability insurance amount</label>
+                    <depends>
+                        <field id="allow_use_insurance">1</field>
+                    </depends>
+                </field>
+                <field id="sallowspecific" showInDefault="1" showInWebsite="1" sortOrder="50" translate="label" type="select">
+                    <label>Ship to Applicable Countries</label>
+                    <frontend_class>shipping-applicable-country</frontend_class>
+                    <source_model>Magento\Shipping\Model\Config\Source\Allspecificcountries</source_model>
+                </field>
+                <field id="specificcountry" showInDefault="1" showInWebsite="1" sortOrder="60" translate="label" type="multiselect">
+                    <label>Ship to Specific Countries</label>
+                    <can_be_empty>1</can_be_empty>
+                    <source_model>Magento\Directory\Model\Config\Source\Country</source_model>
+                </field>
+                <field id="sort_order" showInDefault="1" showInWebsite="1" sortOrder="70" translate="label" type="text">
+                    <label>Sort Order</label>
+                </field>
+                <field id="specificerrmsg" showInDefault="1" showInStore="1" showInWebsite="1" sortOrder="80" translate="label" type="textarea">
+                    <label>Displayed Error Message</label>
+                </field>
+            </group>
+        </section>
+    </system>
+</config>
