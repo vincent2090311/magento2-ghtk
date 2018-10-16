@@ -132,10 +132,10 @@ class Adapter
         return $result;
     }
 
-    public function getOrderStatus(string $orderCode): array
+    public function getOrderStatus(string $trackingLabel): array
     {
         try {
-            $url = $this->apiUrl . static::GET_ORDER_STATUS . '/' . $orderCode;
+            $url = $this->apiUrl . static::GET_ORDER_STATUS . '/' . $trackingLabel;
             $this->curl->get($url);
             $response = $this->curl->getBody();
             $result = $this->serializer->unserialize($response);
@@ -146,10 +146,10 @@ class Adapter
         return $result;
     }
 
-    public function cancelOrder(string $orderCode): array
+    public function cancelOrder(string $trackingLabel): array
     {
         try {
-            $url = $this->apiUrl . static::CANCEL_ORDER . '/' . $orderCode;;
+            $url = $this->apiUrl . static::CANCEL_ORDER . '/' . $trackingLabel;;
             $this->curl->post($url, []);
             $response = $this->curl->getBody();
             $result = $this->serializer->unserialize($response);

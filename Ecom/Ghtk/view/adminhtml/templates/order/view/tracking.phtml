@@ -1,0 +1,27 @@
+<?php $order = $block->getOrder() ?>
+<section class="admin__page-section order-view-account-information">
+    <div class="admin__page-section-title">
+        <span class="title"><?= /* @escapeNotVerified */  $block->escapeHtml(__('Tracking Label')) ?></span>
+    </div>
+    <div class="admin__page-section-content">
+        <div class="admin__page-section-item order-information tracking-label">
+            <p><?= $block->escapeHtml($order->getTrackingLabel()) ?></p>
+            <button title="<?= /* @escapeNotVerified */  $block->escapeHtml(__('Track')) ?>" type="button" class="action-default scalable task process-tracking" data-ui-id="widget-button-0">
+                <span><?= /* @escapeNotVerified */  $block->escapeHtml(__('Track')) ?></span>
+            </button>
+        </div>
+        <div class="admin__page-section-item order-account-information tracking-infrmation">
+        </div>
+    </div>
+</section>
+<script type="text/x-magento-init">
+    {
+        ".process-tracking": {
+            "ghtkTracking": {
+                "ajaxUrl": "<?php echo $block->getUrl('ghtk/tracking/index') ?>",
+                "tracking_label": "<?= $block->escapeHtml($order->getTrackingLabel()) ?>",
+                "resultContainter" : ".tracking-infrmation"
+            }
+        }
+    }
+</script>

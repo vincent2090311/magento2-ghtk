@@ -4,5 +4,6 @@
         <referenceBlock name="order_totals">
             <block class="Ecom\Ghtk\Block\Adminhtml\Sales\Totals\Insurance" name="insurance" />
         </referenceBlock>
+        <block class="Magento\Backend\Block\Template" name="ghtk.tracking.label" template="Ecom_Ghtk::order/view/tracking.phtml" />
     </body>
 </page>
